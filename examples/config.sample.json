@@ -1,0 +1,12 @@
+{
+  "environment": "LAB",
+  "backupRoot": "lab-storage",
+  "dataFile": "lab-data/records.json",
+  "sites": ["LAB-NORTE", "LAB-SUL", "LAB-LESTE", "LAB-OESTE"],
+  "components": ["Aplicacao", "Banco", "Rede", "Outro"],
+  "sql": {
+    "server": ".\\SQLEXPRESS",
+    "database": "BackupPortfolioLab",
+    "authentication": "Windows"
+  }
+}

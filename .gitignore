@@ -1,0 +1,41 @@
+# Local, optional demo data & storage
+lab-data/
+lab-storage/
+config.json
+config.local.json
+*.local.json
+.env
+.env.*
+
+# Company/original scripts must NEVER enter this public repo
+BackupForm.ps1
+BackupForm*.ps1
+DeployTatic*.ps1
+
+# Credentials / keys
+*.pem
+*.pfx
+*.p12
+*.key
+*.kdbx
+*.secrets.json
+
+# Backups and generated binary data
+*.bak
+*.mdf
+*.ndf
+*.ldf
+*.7z
+*.zip
+*.msi
+*.exe
+logs/
+output/
+artifacts/
+*.log
+
+# Editor / system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,24 @@
+PUBLICAÇÃO NO GITHUB DESKTOP
+
+1. Extraia o ZIP na pasta D:\Projetos\powershell-backup-operations-manager.
+2. Abra o GitHub Desktop: File > Add local repository.
+3. Se solicitado, clique em Create a repository here.
+4. Nome sugerido: powershell-backup-operations-manager.
+5. Confira Changes. O BackupForm.ps1 original nunca deve ser incluído.
+6. Faça o commit: "Initial portfolio demo - backup operations manager".
+7. Clique em Publish repository. Prefira PRIVATE enquanto faz a revisão de segurança.
+8. Teste Start-Demo.cmd no Windows antes de tornar o repo público.
+9. Adicione uma captura real da GUI em docs/images/gui-preview.png, atualize README e faça push.
+10. Depois de conferir código, histórico e direitos de publicação, altere para público em Settings > General > Danger Zone > Change repository visibility.
+
+DESCRIÇÃO PARA O GITHUB
+
+PowerShell WinForms portfolio demo for backup records, reporting, retention planning, and optional localhost SQL Server integration. Safe-by-default, Pester and CI.
+
+TOPICS
+powershell, winforms, sql-server, backup-management, automation, pester, github-actions, portfolio
+
+REGRAS
+- Nunca adicione o BackupForm.ps1 corporativo ao repositório.
+- Nunca use a rotina de retenção original para testes.
+- Aqui, "backup" significa cadastro de metadados: não há geração real de backup.

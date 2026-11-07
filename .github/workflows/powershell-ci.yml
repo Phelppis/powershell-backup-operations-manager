@@ -1,0 +1,38 @@
+name: PowerShell CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validation:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Parse PS scripts (PowerShell 7)
+        shell: pwsh
+        run: |
+          $errors = @()
+          Get-ChildItem -Recurse -File | Where-Object { $_.Extension -in '.ps1','.psm1' } | ForEach-Object {
+            $tokens = $null
+            $parseErrors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$tokens, [ref]$parseErrors)
+            if ($null -ne $parseErrors -and $parseErrors.Count -gt 0) { $errors += @($parseErrors) }
+          }
+          if ($errors.Count -gt 0) { $errors | Format-List; throw 'PowerShell parse failure' }
+      - name: Check public content
+        shell: pwsh
+        run: ./scripts/Verify-PublicContent.ps1
+      - name: Install Pester 5
+        shell: pwsh
+        run: Install-Module Pester -MinimumVersion 5.0 -Scope CurrentUser -Force -SkipPublisherCheck
+      - name: Pester 5 tests
+        shell: pwsh
+        run: |
+          Import-Module Pester -MinimumVersion 5.0
+          $result = Invoke-Pester ./tests -PassThru -Output Detailed
+          if ($result.FailedCount -gt 0) { exit 1 }
+      - name: Windows PowerShell 5.1 smoke test
+        shell: powershell
+        run: ./scripts/Smoke-Test.ps1
