@@ -52,4 +52,5 @@ O GitHub Actions executa os testes Pester e um smoke test no Windows PowerShell 
 - Confira `git status` e o histórico de commits.
 - Confirme que `BackupForm.ps1` e quaisquer arquivos corporativos **não constam do repositório**.
 - Não anexe logs, bases, `.bak`, arquivos com dados reais, capturas com nomes internos ou credenciais.
-- Teste a GUI no Windows e, se aprovada, adicione uma captura limpa em `docs/images/gui-preview.png`.
+- Teste a GUI no Windows e, se aprovada, adicione uma captura limpa em `images/backup_preview.png`.
+- Após modificar a interface, atualize a captura em `images/backup_preview.png` antes de divulgá-la. O `.gitignore` evita commits de exportações com nomes padrão, mas relatórios com nomes personalizados devem ser revisados manualmente.
