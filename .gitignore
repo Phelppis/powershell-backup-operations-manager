@@ -7,6 +7,10 @@ config.local.json
 .env
 .env.*
 
+# Locally exported reports may contain user-provided metadata
+relatorio-backups*.csv
+relatorio-backups*.html
+
 # Company/original scripts must NEVER enter this public repo
 BackupForm.ps1
 BackupForm*.ps1
