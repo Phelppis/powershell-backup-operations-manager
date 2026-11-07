@@ -94,8 +94,10 @@ $form.BackColor=[System.Drawing.Color]::FromArgb(245,248,251)
 $form.Font=New-Object System.Drawing.Font('Segoe UI',10)
 $title=New-UiLabel 'Backup Operations Manager' 25 18 700
 $title.Font=New-Object System.Drawing.Font('Segoe UI Semibold',19)
+# The default 22px label height clips large fonts in Windows Forms.
+$title.Size=New-Object System.Drawing.Size(700,42)
 $form.Controls.Add($title)
-$sub=New-UiLabel 'PowerShell  |  Inventário  |  Relatórios  |  Retenção simulada' 27 60 900
+$sub=New-UiLabel 'PowerShell  |  Inventário  |  Relatórios  |  Retenção simulada' 27 65 900
 $sub.ForeColor=[System.Drawing.Color]::FromArgb(75,85,99)
 $form.Controls.Add($sub)
 $tabs=New-Object System.Windows.Forms.TabControl
